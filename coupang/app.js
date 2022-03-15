@@ -5,8 +5,9 @@ const cors = require("cors");
 const PORT = 3000;
 app.use(cors());
 app.use(express.static(__dirname + "/public"));
-// app.use("/", router);
 
+app.use(express.static("public"));
+// app.use("/", router);
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/" + "views/main.html");
 });

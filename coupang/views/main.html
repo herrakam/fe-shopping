@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.scss">
-    <link rel="stylesheet" href="/stylesheets/layout.scss">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/layout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <nav>
+        <div class="nav-top">
         <div class="nav-top-left">
             <div class="favorites">즐겨찾기</div>
             <div class="store-entry">입점신청</div>
@@ -19,33 +23,53 @@
             <div class="sign-in">회원가입</div>
             <div class="customer-center">고객센터</div>
         </div>
-        <div class="nav-category">
-            <div class="hamburger-btn"></div>
+    </div>
+    <div class="nav-bottom">
+        <div class="nav-category center-sort">
+            <div class="hamburger-btn">
+                <img src="/images/white-hamburger-menu-icon-24.jpg" alt="" class="hamburger-btn-white">
+            </div>
             <div class="category-text">카테고리</div>
         </div>
         <div class="nav-info-wrap">
             <div class="info-wrap-top">
-                <div class="info-wrap-title"></div>
+                <div class="info-wrap-title">
+                    <img src="//image7.coupangcdn.com/image/coupang/common/logo_coupang_w350.png" alt="" class="title">
+                </div>
                 <div class="info-wrap-search-bar">
-                    <div class="search-bar-category"></div>
-                    <div class="search-keyboard" placeholder="찾고 싶은 상품을 검색해보세요!"></div>
-                    <div class="search-mic"></div>
-                    <div class="search-btn"></div>
+                    <div class="search-bar-category height-sort">
+                        <div class="category-contents">전체</div> 
+                        <button class="down">
+                            🔽
+                        </button>
+                    </div>
+                    <input class="search-keyboard" placeholder="찾고 싶은 상품을 검색해보세요!"></ㅑ>
+                    <div class="search-btn center-sort">🔍</div>
                 </div>
                 <div class="info-wrap-my-coupang">
-                    <div class="my-coupang-icon"></div>
+                    <div class="my-coupang-icon center-sort">
+                    <img src="/images/computer-icons-user-profile-avatar-profile-145f8a4162de6d6749f402e758214dfd.png" class="my-coupang-icon-img"></img>
+                </div>
                     <div class="my-coupang-text">마이쿠팡</div>
                 </div>
                 <div class="info-wrap-shopping-cart">
-                    <div class="shopping-cart-icon"></div>
+                    <div class="shopping-cart-icon center-sort">
+                        <img src="/images/shopping-cart-logo-icon-shopping-cart-1c4ece4192d9f2bff2f57c678a709e5f.png" alt="" class="shopping-cart-icon-img">
+                    </div>
                     <div class="shopping-cart-text">장바구니</div>
                 </div>
             </div>
             <div class="info-wrap-bottom">
-                <div class="info-wrap-rocket-delivery">로켓배송</div>
-                <div class="info-wrap-rocket-fresh">로켓프레시</div>
+                <div class="info-wrap-rocket-delivery">
+                    <img src="/images/spacecraft-rocket-launch-clip-art-rocket-d54df4ce235249ab99ac469ac10712fe.png" alt="" class="rocket">
+                    로켓배송</div>
+                <div class="info-wrap-rocket-fresh">
+                    <img src="/images/spacecraft-rocket-launch-clip-art-rocket-d54df4ce235249ab99ac469ac10712fe.png" alt="" class="rocket">
+                    로켓프레시</div>
                 <div class="info-wrap-coupang-biz">쿠팡비즈</div>
-                <div class="into-wrap-rocket-dp">로켓직구</div>
+                <div class="into-wrap-rocket-dp">
+                    <img src="/images/spacecraft-rocket-launch-clip-art-rocket-d54df4ce235249ab99ac469ac10712fe.png" alt="" class="rocket">
+                    로켓직구</div>
                 <div class="info-wrap-gold-box">골드박스</div>
                 <div class="info-wrap-wow-discount">와우회원할인</div>
                 <div class="info-wrap-event-coupon">이벤트/쿠폰</div>
@@ -53,6 +77,7 @@
                 <div class="info-wrap-travel-ticket">여행/티켓</div>
             </div>
         </div>
+    </div>
     </nav>
     <section>
         <div class="slide-show-wrap">
