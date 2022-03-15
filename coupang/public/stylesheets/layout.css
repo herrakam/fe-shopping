@@ -1,0 +1,16 @@
+html,
+body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  display: flex;
+  justify-content: center; }
+
+nav {
+  width: 80%;
+  height: 115px;
+  border: 1px solid black; }
+
+.nav-top-left {
+  border: 1px solid black; }
