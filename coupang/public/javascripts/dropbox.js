@@ -13,13 +13,35 @@ class DropBox {
         display: "none",
       });
     }
-    // const $content = document.createElement("div");
-    // $content.className += `${this.element}-content`;
-    // console.log($content);
-    // for (let i = 0; i < length; i++) {
-    //   $tag.appendChild($content);
-    //   console.log(`콘텐츠 추가됨`);
-    // }
   }
 }
-export default DropBox;
+export class SearchBarDropBox extends DropBox {
+  constructor($element) {
+    super($element);
+    this.$tag = document.querySelector(`#${this.element}`);
+  }
+
+  showDropbox() {
+    if (this.$tag.style.display === "none") {
+      Object.assign(this.$tag.style, {
+        display: "block",
+        height: "508px",
+      });
+    } else {
+      Object.assign(this.$tag.style, {
+        display: "none",
+        height: "0px",
+      });
+    }
+  }
+  changeContentText(target) {
+    const $searchBarContent = document.querySelector("#search-bar-content-id");
+    $searchBarContent.innerHTML = target.innerHTML;
+  }
+}
+
+export class CategoryDropBox extends DropBox {
+  constructor($element) {
+    super($element);
+  }
+}
