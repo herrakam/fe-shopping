@@ -106,16 +106,37 @@ nav {
       height: 37px;
     }
     .search-bar-category {
+      position: relative;
       width: 135px;
       height: 100%;
       box-sizing: border-box;
       padding: 5px;
       border-right: 1px solid #ddd;
     }
-    .category-contents {
+    .search-bar-dropbox {
+      display: none;
+      position: absolute;
+      width: 100%;
+      // height: 508px;
+      top: 37px;
+      left: 0;
+      z-index: 5;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+      overflow-y: auto;
+      box-sizing: border-box;
+      padding: 10px 0 10px 10px;
+      transition: 1s;
+    }
+    .search-bar-dropbox-content,
+    .search-bar-content {
+      // position: absolute;
       width: 80%;
-      font-size: 12px;
+      height: 30px;
+      font-size: 11px;
       color: $font-color;
+      list-style: none;
     }
     .down {
       width: 30px;
@@ -180,7 +201,7 @@ nav {
     position: relative;
     box-sizing: border-box;
     padding: 7px 14px 0;
-    font-size: 12px;
+    font-size: 11px;
     color: $font-color;
   }
 }
