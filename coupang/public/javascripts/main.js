@@ -1,21 +1,7 @@
-import SearchBarDropBox from "./searchbarDropbox.js";
+import { categoryDropBoxEvent, searchBarDropBoxEvent } from "./util.js";
+
 function init() {
-  const searchBarDropbox = new SearchBarDropBox("search-bar-dropbox-id");
-  const $searchBarDropbox = document.querySelector(".search-bar-content");
-  const $dropboxContents = document.querySelectorAll(
-    ".search-bar-dropbox-content"
-  );
-  const $dropboxBtn = document.querySelector(`#down-btn`);
-  $dropboxBtn.addEventListener("click", function () {
-    searchBarDropbox.showDropbox();
-  });
-  $searchBarDropbox.addEventListener("click", function () {
-    searchBarDropbox.showDropbox();
-  });
-  $dropboxContents.forEach((content) => {
-    content.addEventListener("click", function (e) {
-      searchBarDropbox.changeContentText(e.target);
-    });
-  });
+  searchBarDropBoxEvent();
+  categoryDropBoxEvent();
 }
 window.addEventListener("DOMContentLoaded", init);

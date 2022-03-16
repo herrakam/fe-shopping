@@ -99,6 +99,7 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 
 .nav-bottom .nav-category .hamburger-btn {
@@ -116,6 +117,29 @@ nav {
 .nav-bottom .nav-category .category-text {
   color: white;
   font-size: 13px;
+}
+
+.nav-bottom .nav-category .category-dropbox {
+  display: none;
+  width: 145px;
+  height: 530px;
+  position: absolute;
+  z-index: 5;
+  top: 115px;
+  left: 0;
+  font-size: 12px;
+  color: #333333;
+  list-style: none;
+  border-right: 1px solid #ddd;
+  -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px 0 10px 10px;
+}
+
+.nav-bottom .nav-category .category-dropbox-content {
+  height: 30px;
 }
 
 .nav-bottom .info-wrap-top {

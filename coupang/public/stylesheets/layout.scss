@@ -65,6 +65,7 @@ nav {
     height: $nav-catogory-height;
     background: $dark-sky-blue;
     flex-direction: column;
+    position: relative;
 
     .hamburger-btn {
       width: 60px;
@@ -80,6 +81,25 @@ nav {
     .category-text {
       color: white;
       font-size: 13px;
+    }
+    .category-dropbox {
+      display: none;
+      width: 145px;
+      height: 530px;
+      position: absolute;
+      z-index: 5;
+      top: 115px;
+      left: 0;
+      font-size: 12px;
+      color: $font-color;
+      list-style: none;
+      border-right: 1px solid #ddd;
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+      box-sizing: border-box;
+      padding: 10px 0 10px 10px;
+    }
+    .category-dropbox-content {
+      height: 30px;
     }
   }
   .info-wrap-top {
