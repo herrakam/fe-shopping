@@ -24,7 +24,11 @@ export class SearchBarDropBox extends DropBox {
     super($element);
     this.$tag = document.querySelector(`#${this.element}`);
   }
-
+  toggleDropbox() {
+    this.$tag.style.display === "none"
+      ? this.showDropbox()
+      : this.hideDropbox();
+  }
   changeContentText(target) {
     const $searchBarContent = document.querySelector("#search-bar-content-id");
     $searchBarContent.innerHTML = target.innerHTML;
