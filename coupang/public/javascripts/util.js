@@ -1,4 +1,5 @@
 import { CategoryDropBox, SearchBarDropBox } from "./dropbox.js";
+import SearchEngine from "./searchEngine.js";
 
 export function searchBarDropBoxEvent() {
   const searchBarDropbox = new SearchBarDropBox("search-bar-dropbox-id");
@@ -32,5 +33,12 @@ export function categoryDropBoxEvent() {
   });
   $category.addEventListener("mouseout", function () {
     categoryDropbox.hideDropbox();
+  });
+}
+export function searchEngineEvent() {
+  const searchInput = document.querySelector("#search-keyboard-id");
+  const searchEngine = new SearchEngine(searchInput);
+  searchInput.addEventListener("keydown", function () {
+    searchEngine.getSearchingValue();
   });
 }

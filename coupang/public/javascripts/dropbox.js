@@ -30,7 +30,7 @@ export class SearchBarDropBox extends DropBox {
       : this.hideDropbox();
   }
   changeContentText(target) {
-    const $searchBarContent = document.querySelector("#search-bar-content-id");
+    const $searchBarContent = document.querySelector(".search-bar-content");
     $searchBarContent.innerHTML = target.innerHTML;
   }
 }
