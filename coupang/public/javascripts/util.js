@@ -27,7 +27,10 @@ export function categoryDropBoxEvent() {
   $category.addEventListener("mouseover", function () {
     categoryDropbox.showDropbox();
   });
-  $categoryDropbox.addEventListener("mouseover", function () {
-    categoryDropbox.showDropbox();
+  $category.addEventListener("mouseout", function () {
+    categoryDropbox.hideDropbox();
   });
+  //   $categoryDropbox.addEventListener("mouseover", function () {
+  //     categoryDropbox.showDropbox();
+  //   });
 }
