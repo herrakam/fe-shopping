@@ -7,16 +7,9 @@ export function searchBarDropBoxEvent() {
   const $dropboxContents = document.querySelectorAll(
     ".search-bar-dropbox-content"
   );
-  $searchBarDropbox.addEventListener(
-    "click",
-    function () {
-      searchBarDropbox.toggleDropbox();
-    },
-    true
-  );
-  // $searchBarDropbox.addEventListener("click", function () {
-  //   searchBarDropbox.showDropbox();
-  // });
+  $searchBarDropbox.addEventListener("click", function () {
+    searchBarDropbox.toggleDropbox();
+  });
   $dropboxContents.forEach((content) => {
     content.addEventListener("click", function (e) {
       searchBarDropbox.changeContentText(e.target);
@@ -27,7 +20,6 @@ export function searchBarDropBoxEvent() {
 export function categoryDropBoxEvent() {
   const categoryDropbox = new CategoryDropBox("category-dropbox-id");
   const $category = document.querySelector("#category");
-  const $categoryDropbox = document.querySelector("#category-dropbox-id");
   $category.addEventListener("mouseover", function () {
     categoryDropbox.showDropbox();
   });
@@ -47,8 +39,10 @@ export function searchEngineEvent() {
   );
   searchInput.addEventListener("focus", function () {
     searchEngine.showDropbox();
+    searchEngine.renderRecentSearch();
   });
   searchInput.addEventListener("blur", function () {
+    searchEngine.removeRecentSearch();
     searchEngine.hideDropbox();
   });
 }
