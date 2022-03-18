@@ -38,7 +38,24 @@ export function categoryDropBoxEvent() {
 export function searchEngineEvent() {
   const searchInput = document.querySelector("#search-keyboard-id");
   const searchEngine = new SearchEngine(searchInput);
-  searchInput.addEventListener("keydown", function () {
-    searchEngine.getSearchingValue();
+  searchInput.addEventListener(
+    "keydown",
+    debounce(() => {
+      const value = searchEngine.getSearchingValue();
+      console.log(value);
+    }, 500)
+  );
+  searchInput.addEventListener("focus", function () {
+    searchEngine.showDropbox();
   });
+  searchInput.addEventListener("blur", function () {
+    searchEngine.hideDropbox();
+  });
+}
+export function debounce(callback, delay) {
+  let timerId;
+  return (event) => {
+    if (timerId) clearTimeout(timerId);
+    timerId = setTimeout(callback, delay, event);
+  };
 }

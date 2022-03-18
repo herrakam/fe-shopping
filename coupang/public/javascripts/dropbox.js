@@ -5,15 +5,6 @@ class DropBox {
   }
   showDropbox() {
     this.$tag.style.display = "block";
-    // if (this.$tag.style.display === "none") {
-    //   Object.assign(this.$tag.style, {
-    //     display: "block",
-    //   });
-    // } else {
-    //   Object.assign(this.$tag.style, {
-    //     display: "none",
-    //   });
-    // }
   }
   hideDropbox() {
     this.$tag.style.display = "none";

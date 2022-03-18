@@ -162,6 +162,7 @@ nav {
 }
 
 .nav-bottom .info-wrap-top .info-wrap-search-bar {
+  position: relative;
   width: 518px;
   height: 37px;
   border: 2px solid #4285f4;
@@ -231,6 +232,22 @@ nav {
   border: none;
   font-size: 13px;
   width: 333px;
+  outline: none;
+}
+
+.nav-bottom .info-wrap-top .search-dropbox {
+  position: absolute;
+  display: none;
+  width: 383px;
+  height: 300px;
+  border: 1px solid #eee;
+  border-top: 1px solid #ddd;
+  z-index: 5;
+  background: #ffffff;
+  -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  top: 37px;
+  left: 135px;
 }
 
 .nav-bottom .info-wrap-top .search-btn {
