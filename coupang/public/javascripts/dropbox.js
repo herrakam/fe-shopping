@@ -5,9 +5,11 @@ class DropBox {
   }
   showDropbox() {
     this.$tag.style.display = "block";
+    // this.$tqg.style.maxheight = "100%";
   }
   hideDropbox() {
     this.$tag.style.display = "none";
+    // this.$tqg.style.maxheight = "0";
   }
 }
 export class SearchBarDropBox extends DropBox {

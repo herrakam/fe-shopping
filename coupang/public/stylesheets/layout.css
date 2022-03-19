@@ -252,6 +252,7 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  overflow-y: auto;
 }
 
 .nav-bottom .info-wrap-top .recent-search-text {

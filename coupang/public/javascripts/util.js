@@ -33,13 +33,13 @@ export function searchEngineEvent() {
   searchInput.addEventListener(
     "keydown",
     debounce(() => {
-      const value = searchEngine.getSearchingValue();
-      console.log(value);
+      searchEngine.saveSearchingValue();
     }, 500)
   );
   searchInput.addEventListener("focus", function () {
     searchEngine.showDropbox();
     searchEngine.renderRecentSearch();
+    searchEngine.renderSearchingValue();
   });
   searchInput.addEventListener("blur", function () {
     searchEngine.removeRecentSearch();
