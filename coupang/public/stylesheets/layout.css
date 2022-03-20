@@ -99,6 +99,7 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  position: relative;
 }
 
 .nav-bottom .nav-category .hamburger-btn {
@@ -116,6 +117,29 @@ nav {
 .nav-bottom .nav-category .category-text {
   color: white;
   font-size: 13px;
+}
+
+.nav-bottom .nav-category .category-dropbox {
+  display: none;
+  width: 145px;
+  height: 530px;
+  position: absolute;
+  z-index: 5;
+  top: 115px;
+  left: 0;
+  font-size: 12px;
+  color: #333333;
+  list-style: none;
+  border-right: 1px solid #ddd;
+  -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px 0 10px 10px;
+}
+
+.nav-bottom .nav-category .category-dropbox-content {
+  height: 30px;
 }
 
 .nav-bottom .info-wrap-top {
@@ -138,6 +162,7 @@ nav {
 }
 
 .nav-bottom .info-wrap-top .info-wrap-search-bar {
+  position: relative;
   width: 518px;
   height: 37px;
   border: 2px solid #4285f4;
@@ -165,6 +190,7 @@ nav {
   display: none;
   position: absolute;
   width: 100%;
+  height: 508px;
   top: 37px;
   left: 0;
   z-index: 5;
@@ -206,6 +232,57 @@ nav {
   border: none;
   font-size: 13px;
   width: 333px;
+  outline: none;
+}
+
+.nav-bottom .info-wrap-top .search-dropbox {
+  position: absolute;
+  display: none;
+  width: 383px;
+  height: 300px;
+  border: 1px solid #eee;
+  border-top: 1px solid #ddd;
+  z-index: 5;
+  background: #ffffff;
+  -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  top: 37px;
+  left: 135px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: auto;
+}
+
+.nav-bottom .info-wrap-top .recent-search-text {
+  font-size: 12px;
+  width: 372px;
+  height: 39px;
+  border-bottom: 1px solid #eee;
+}
+
+.nav-bottom .info-wrap-top .recent-search {
+  height: 260px;
+  width: 372px;
+}
+
+.nav-bottom .info-wrap-top .recent-search-btns {
+  width: 100%;
+  height: 27px;
+  background: #f5f5f5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: 1px solid #eee;
+  font-size: 12px;
+  color: #888888;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 12px;
 }
 
 .nav-bottom .info-wrap-top .search-btn {
