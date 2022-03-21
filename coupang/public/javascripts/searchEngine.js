@@ -6,7 +6,6 @@ export default class SearchEngine {
   }
   saveSearchingValue() {
     const inputValue = this.inputTag.value;
-    console.log(inputValue);
     localStorage.setItem(`searchingValue${this.count}`, inputValue);
     localStorage.getItem("searchingValue");
     this.count++;
@@ -19,7 +18,6 @@ export default class SearchEngine {
       searchedValues.push(searchedValue);
     }
     const sortedValuesArr = [...new Set(searchedValues)];
-    console.log(sortedValuesArr);
     sortedValuesArr.map((value) => {
       const $searchedValue = document.createElement("div");
       $searchedValue.innerHTML = value;
