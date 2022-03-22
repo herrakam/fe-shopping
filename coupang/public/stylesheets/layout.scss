@@ -213,6 +213,9 @@ nav {
       box-sizing: border-box;
       padding: 0 12px;
     }
+    .recent-search-btns > * {
+      cursor: pointer;
+    }
     .search-btn {
       width: 50px;
     }

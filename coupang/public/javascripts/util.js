@@ -28,22 +28,28 @@ export function categoryDropBoxEvent() {
   });
 }
 export function searchEngineEvent() {
-  const searchInput = document.querySelector("#search-keyboard-id");
-  const searchEngine = new SearchEngine(searchInput);
-  searchInput.addEventListener(
+  const $searchInput = document.querySelector("#search-keyboard-id");
+  const $resetRecentSearch = document.querySelector("#reset-recent-search");
+  const searchEngine = new SearchEngine($searchInput);
+  $searchInput.addEventListener(
     "keydown",
     debounce(() => {
       searchEngine.saveSearchingValue();
     }, 500)
   );
-  searchInput.addEventListener("focus", function () {
+  $searchInput.addEventListener("focus", function () {
     searchEngine.showDropbox();
-    searchEngine.renderRecentSearch();
     searchEngine.renderSearchingValue();
   });
-  searchInput.addEventListener("blur", function () {
+  $searchInput.addEventListener("blur", function () {
     searchEngine.removeRecentSearch();
     searchEngine.hideDropbox();
+  });
+  $resetRecentSearch.addEventListener("click", function () {
+    searchEngine.deleteAllRecentSearch();
+  });
+  $resetRecentSearch.addEventListener("mousedown", function (e) {
+    e.preventDefault();
   });
 }
 export function debounce(callback, delay) {
@@ -52,4 +58,8 @@ export function debounce(callback, delay) {
     if (timerId) clearTimeout(timerId);
     timerId = setTimeout(callback, delay, event);
   };
+}
+
+export function delay(ms) {
+  return new Promise((resolve) => setTimeout(() => resolve(), ms * 1000));
 }

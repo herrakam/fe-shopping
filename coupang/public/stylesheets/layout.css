@@ -285,6 +285,10 @@ nav {
   padding: 0 12px;
 }
 
+.nav-bottom .info-wrap-top .recent-search-btns > * {
+  cursor: pointer;
+}
+
 .nav-bottom .info-wrap-top .search-btn {
   width: 50px;
 }
