@@ -9,8 +9,6 @@ function init() {
   searchBarDropBoxEvent();
   categoryDropBoxEvent();
   searchEngineEvent();
-  getData("/data").then((data) => {
-    console.log(data);
-  });
+  getData("/data");
 }
 window.addEventListener("DOMContentLoaded", init);

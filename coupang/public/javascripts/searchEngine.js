@@ -38,6 +38,7 @@ export default class SearchEngine {
   hideDropbox() {
     this.$dropbox.style.display = "none";
   }
+
   removeRecentSearch() {
     while (this.$recentSearch.hasChildNodes()) {
       this.$recentSearch.removeChild(this.$recentSearch.firstChild);

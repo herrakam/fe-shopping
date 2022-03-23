@@ -60,13 +60,9 @@ export function debounce(callback, delay) {
   };
 }
 
-export function delay(ms) {
-  return new Promise((resolve) => setTimeout(() => resolve(), ms * 1000));
-}
-
 export const getData = async (url) => {
   const response = await fetch(url);
   const json = await response.json();
-  const data = await json;
+  const data = json;
   return data;
 };
