@@ -38,16 +38,6 @@ export default class SearchEngine {
   hideDropbox() {
     this.$dropbox.style.display = "none";
   }
-  // renderRecentSearch() {
-  //   const recentSearch = `
-  //   <div class="recent-search-text height-sort">최근 검색어</div>
-  //   <div class="recent-search" id="recent-search-id"></div>
-  //   <div class="recent-search-btns height-sort">
-  //       <div class="all-clear" id="reset-recent-search">전체 삭제</div>
-  //       <div class="turnoff-recent-search" >최근 검색어 끄기</div>
-  //   </div>`;
-  //   this.$dropbox.insertAdjacentHTML("afterbegin", recentSearch);
-  // }
   removeRecentSearch() {
     while (this.$recentSearch.hasChildNodes()) {
       this.$recentSearch.removeChild(this.$recentSearch.firstChild);
