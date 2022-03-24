@@ -31,13 +31,15 @@ export function searchEngineEvent() {
   const $searchInput = document.querySelector("#search-keyboard-id");
   const $resetRecentSearch = document.querySelector("#reset-recent-search");
   const searchEngine = new SearchEngine($searchInput);
-  $searchInput.addEventListener(
-    "keydown",
+  $searchInput.addEventListener("keydown", function () {
     debounce(() => {
-      searchEngine.saveSearchingValue();
       searchEngine.getSearchResult();
-    }, 500)
-  );
+    }, 500)();
+    if (window.event.keyCode === 13) {
+      searchEngine.saveSearchingValue();
+    }
+  });
+
   $searchInput.addEventListener("focus", function () {
     searchEngine.showDropbox();
     searchEngine.renderRecentSearch();
