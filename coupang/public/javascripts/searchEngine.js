@@ -37,7 +37,11 @@ export default class SearchEngine {
   }
   renderData(value) {
     const $searchedValue = document.createElement("div");
-    $searchedValue.innerHTML = value.keyword;
+    if (typeof value === "string") {
+      $searchedValue.innerHTML = value;
+    } else {
+      $searchedValue.innerHTML = value.keyword;
+    }
     this.$recentSearch.appendChild($searchedValue);
   }
 
