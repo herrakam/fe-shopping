@@ -4,6 +4,7 @@ export default class SearchEngine {
     this.$dropbox = document.querySelector("#search-dropbox-id");
     this.recentSearchArr = [];
     this.$recentSearch = document.querySelector("#recent-search-id");
+    this.$needtoHide = document.querySelectorAll(".need-to-Hide");
   }
   saveSearchingValue() {
     const inputValue = this.input.value;
@@ -14,6 +15,9 @@ export default class SearchEngine {
     localStorage.setItem("recentSearch", JSON.stringify(this.recentSearchArr));
   }
   async getSearchResult() {
+    for (const content of this.$needtoHide) {
+      content.classList.add("hide");
+    }
     const response = await fetch("/data");
     const data = await response.json();
     const inputValue = this.input.value;
@@ -28,6 +32,9 @@ export default class SearchEngine {
     data.map((value) => this.renderData(value));
   }
   renderRecentSearch() {
+    for (const content of this.$needtoHide) {
+      content.classList.remove("hide");
+    }
     let searchedValues;
     localStorage.length === 0
       ? (searchedValues = ["최근 검색어 기록이 없습니다."])

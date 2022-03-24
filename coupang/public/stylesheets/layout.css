@@ -289,6 +289,10 @@ nav {
   cursor: pointer;
 }
 
+.nav-bottom .info-wrap-top .hide {
+  display: none;
+}
+
 .nav-bottom .info-wrap-top .search-btn {
   width: 50px;
 }
