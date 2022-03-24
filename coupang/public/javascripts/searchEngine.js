@@ -25,11 +25,7 @@ export default class SearchEngine {
   }
   renderSearchResult(data) {
     this.removeRecentSearch();
-    data.map((value) => {
-      const $searchedValue = document.createElement("div");
-      $searchedValue.innerHTML = value.keyword;
-      this.$recentSearch.appendChild($searchedValue);
-    });
+    data.map((value) => this.renderData(value));
   }
   renderRecentSearch() {
     let searchedValues;
@@ -37,11 +33,12 @@ export default class SearchEngine {
       ? (searchedValues = ["최근 검색어 기록이 없습니다."])
       : (searchedValues = JSON.parse(localStorage.getItem("recentSearch")));
     const sortedValuesArr = [...new Set(searchedValues)];
-    sortedValuesArr.map((value) => {
-      const $searchedValue = document.createElement("div");
-      $searchedValue.innerHTML = value;
-      this.$recentSearch.appendChild($searchedValue);
-    });
+    sortedValuesArr.map((value) => this.renderData(value));
+  }
+  renderData(value) {
+    const $searchedValue = document.createElement("div");
+    $searchedValue.innerHTML = value.keyword;
+    this.$recentSearch.appendChild($searchedValue);
   }
 
   deleteAllRecentSearch() {
