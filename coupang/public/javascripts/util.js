@@ -35,11 +35,12 @@ export function searchEngineEvent() {
     "keydown",
     debounce(() => {
       searchEngine.saveSearchingValue();
+      searchEngine.getSearchResult();
     }, 500)
   );
   $searchInput.addEventListener("focus", function () {
     searchEngine.showDropbox();
-    searchEngine.renderSearchingValue();
+    searchEngine.renderRecentSearch();
   });
   $searchInput.addEventListener("blur", function () {
     searchEngine.removeRecentSearch();
@@ -59,10 +60,3 @@ export function debounce(callback, delay) {
     timerId = setTimeout(callback, delay, event);
   };
 }
-
-export const getData = async (url) => {
-  const response = await fetch(url);
-  const json = await response.json();
-  const data = json;
-  return data;
-};
