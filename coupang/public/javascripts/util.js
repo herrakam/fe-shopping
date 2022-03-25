@@ -32,11 +32,16 @@ export function searchEngineEvent() {
   const $resetRecentSearch = document.querySelector("#reset-recent-search");
   const searchEngine = new SearchEngine($searchInput);
   $searchInput.addEventListener("keydown", function () {
-    debounce(() => {
-      searchEngine.getSearchResult();
-    }, 500)();
     if (window.event.keyCode === 13) {
       searchEngine.saveSearchingValue();
+    } else if (window.event.keyCode === 38) {
+      searchEngine.changeFocusup();
+    } else if (window.event.keyCode === 40) {
+      searchEngine.changeFocusDown();
+    } else {
+      debounce(() => {
+        searchEngine.getSearchResult();
+      }, 500)();
     }
   });
 

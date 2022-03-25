@@ -5,6 +5,8 @@ export default class SearchEngine {
     this.recentSearchArr = [];
     this.$recentSearch = document.querySelector("#recent-search-id");
     this.$needtoHide = document.querySelectorAll(".need-to-Hide");
+    this.childNodesidx = 0;
+    this.$searchInput = document.querySelector("#search-keyboard-id");
   }
   saveSearchingValue() {
     const inputValue = this.input.value;
@@ -51,7 +53,20 @@ export default class SearchEngine {
     }
     this.$recentSearch.appendChild($searchedValue);
   }
-
+  changeFocusDown() {
+    const focusedContent = this.$recentSearch.childNodes[this.childNodesidx];
+    if (this.childNodesidx < this.$recentSearch.childNodes.length - 1) {
+      this.childNodesidx++;
+    }
+    this.$searchInput.value = focusedContent.innerHTML;
+  }
+  changeFocusup() {
+    const focusedContent = this.$recentSearch.childNodes[this.childNodesidx];
+    if (this.childNodesidx !== 0) {
+      this.childNodesidx--;
+    }
+    this.$searchInput.value = focusedContent.innerHTML;
+  }
   deleteAllRecentSearch() {
     localStorage.clear();
     this.recentSearchArr = [];
