@@ -49,7 +49,15 @@ export default class SearchEngine {
     if (typeof value === "string") {
       $searchedValue.innerHTML = value;
     } else {
-      $searchedValue.innerHTML = value.keyword;
+      const valueArr = value.keyword.split("");
+      const inputValue = this.input.value;
+      for (let i = 0; i < inputValue.length; i++) {
+        valueArr.shift();
+      }
+      const searchedValueText = `<span class="inputValue">${inputValue}</span>${valueArr.join(
+        ""
+      )}`;
+      $searchedValue.insertAdjacentHTML("afterbegin", searchedValueText);
     }
     this.$recentSearch.appendChild($searchedValue);
   }
