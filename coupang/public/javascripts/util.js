@@ -35,9 +35,9 @@ export function searchEngineEvent() {
     if (window.event.keyCode === 13) {
       searchEngine.saveSearchingValue();
     } else if (window.event.keyCode === 38) {
-      searchEngine.changeFocusup();
+      searchEngine.changeFocus("up");
     } else if (window.event.keyCode === 40) {
-      searchEngine.changeFocusDown();
+      searchEngine.changeFocus("down");
     } else {
       debounce(() => {
         searchEngine.getSearchResult();

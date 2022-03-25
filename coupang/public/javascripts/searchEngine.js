@@ -24,7 +24,7 @@ export default class SearchEngine {
     const data = await response.json();
     const inputValue = this.input.value;
     for (const key in data) {
-      if (key === inputValue) {
+      if (key === inputValue.replace(/ /g, "")) {
         this.renderSearchResult(data[key]);
       }
     }
@@ -49,9 +49,9 @@ export default class SearchEngine {
     if (typeof value === "string") {
       $searchedValue.innerHTML = value;
     } else {
-      const valueArr = value.keyword.split("");
+      const valueArr = value.keyword.replace(/ /g, "").split("");
       const inputValue = this.input.value;
-      for (let i = 0; i < inputValue.length; i++) {
+      for (let i = 0; i < inputValue.replace(/ /g, "").length; i++) {
         valueArr.shift();
       }
       const searchedValueText = `<span class="inputValue">${inputValue}</span>${valueArr.join(
@@ -61,19 +61,21 @@ export default class SearchEngine {
     }
     this.$recentSearch.appendChild($searchedValue);
   }
-  changeFocusDown() {
+  changeFocus(command) {
     const focusedContent = this.$recentSearch.childNodes[this.childNodesidx];
-    if (this.childNodesidx < this.$recentSearch.childNodes.length - 1) {
+    if (
+      command === "down" &&
+      this.childNodesidx < this.$recentSearch.childNodes.length - 1
+    ) {
       this.childNodesidx++;
-    }
-    this.$searchInput.value = focusedContent.innerHTML;
-  }
-  changeFocusup() {
-    const focusedContent = this.$recentSearch.childNodes[this.childNodesidx];
-    if (this.childNodesidx !== 0) {
+    } else if (command === "up" && this.childNodesidx !== 0) {
       this.childNodesidx--;
     }
-    this.$searchInput.value = focusedContent.innerHTML;
+    for (const childNode of this.$recentSearch.childNodes) {
+      childNode.style.textDecoration = "none";
+    }
+    focusedContent.style.textDecoration = "underline";
+    this.$searchInput.value = focusedContent.innerText;
   }
   deleteAllRecentSearch() {
     localStorage.clear();
